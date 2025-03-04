@@ -27,12 +27,12 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         #cache: maven
-    - name: Run the Maven verify phase
-      run: mvn --batch-mode --update-snapshots verify
+    #- name: Run the Maven verify phase
+    #  run: mvn --batch-mode --update-snapshots verify
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Staging
-      run: mkdir staging && cp target/*.ear staging
+      run: mkdir staging && cp ear/target/*.ear staging
     - uses: actions/upload-artifact@v4
       with:
         name: Package
