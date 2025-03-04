@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>test</groupId>
+  <artifactId>TEST_J2EE</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <description>TEST_J2EE</description>
+  <name>TEST_J2EE</name>
+
+
+
+  <!-- Modulos a incluir en el EAR -->
+  <modules>
+    <module>war</module>
+    <module>ear</module>
+  </modules>
+
+
+
+  <build>
+  
+    <finalName>${project.artifactId}</finalName>
+
+    <!-- Directorio de descarga de las fuentes -->
+    <plugins>
+
+      <!-- Compiler : Usamos 'ISO-8859-1' como codificaciÃ³n para compilar -->
+      <!-- Update 04082011 : Ponemos 'ISO-8859-15' por problemas con simbolo 
+        de euro -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <encoding>ISO8859-15</encoding>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <encoding>ISO-8859-1</encoding>
+        </configuration>
+      </plugin>
+
+      <!-- Ejecucion de comprobacion remota de la existencia de librerias 
+        compartidas en WAS -->
+      <!-- Plugin para sustituir variables en el docs.xml (para el - ensamblaje 
+        del contenido estatico). -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.3</version>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>process-docs-xml</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <outputDirectory>.</outputDirectory>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>test</groupId>
+        <artifactId>TEST_J2EE-war</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <type>war</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>test</groupId>
+  <artifactId>TEST_J2EE-ear</artifactId>
+  <packaging>ear</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>TEST_J2EE (EAR)</name>
+
+
+
+  <properties>
+    <pda.basedir>..</pda.basedir>
+  </properties>
+
+  <parent>
+    <groupId>test</groupId>
+    <artifactId>TEST_J2EE</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>test</groupId>
+      <artifactId>TEST_J2EE-war</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>war</type>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+		
+
+      <plugin>
+        <artifactId>maven-ear-plugin</artifactId>
+        <version>2.3.1</version>
+        <configuration>
+					<!--
+					Para filtrar src/main/application
+					<filtering>true</filtering>
+					-->
+          <displayName>TEST_J2EE</displayName>
+          <modules>
+            <webModule>
+              <groupId>test</groupId>
+              <artifactId>TEST_J2EE-war</artifactId>
+              <contextRoot>/testj2ee</contextRoot>
+            </webModule>
+          </modules>
+          <!--  outputDirectory>.</outputDirectory-->
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <generatePom>false</generatePom>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

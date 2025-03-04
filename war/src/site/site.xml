@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="${app.name}">
+	<skin>
+		<groupId>com.mapfre.dgtp.it</groupId>
+		<artifactId>maven-mapfre-skin</artifactId>
+		<version>2.0</version>
+	</skin>
+	<bannerLeft>
+		<name></name>
+	</bannerLeft>
+	<bannerRight>
+		<name></name>
+	</bannerRight>
+	<publishDate position="right" format="dd/MM/yyyy, HH:mm" />
+	<version position="right"/>	
+	<poweredBy>
+		<logo name="Maven" href="http://maven.apache.org/"
+		      img="${project.url}/images/maven-feather.png" />
+	</poweredBy>
+	<body>
+		<head>
+        	  document.write("<table bgcolor='#FFFFFF' class='cabecera'>
+                  <tr>
+                  </tr>
+                  <tr>
+                    <td width='25%' align='center'>
+                      <div class='mapfre_logo'>MAPFRE</div><div class='cabecera_text_big'> | DGTP</div>
+                    </td>
+                    <td width='55%'>
+                    </td>
+                    <td width='20%' align='center'>
+                      <div class='cabecera_text'>Oficina Automatizacion</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width='25%' align='center'>
+                      <div class='cabecera_text'>Sistemas y Produccion</div>
+                    </td>
+                    <td width='55%'>
+                    </td>
+                    <td width='20%' align='center'>
+                      <div class='cabecera_text'>Dpto. Ingenieria</div>
+                    </td>
+                  </tr>
+                  </table>");
+    		</head>
+		<links>
+			<item name="Inicio del Site" href="${pda.maven.site.url}" />
+		</links>
+		${reports}
+		<menu name="Deployment info">
+         		<item name="Prepare log" href="/prepare.log.html" />
+			<item name="Deploy log" href="/deploy.log.html" />
+			<item name="Deploy history" href="/deploy-history.html" />
+		</menu>		
+	</body>
+</project>
