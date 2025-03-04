@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>test</groupId>
-  <artifactId>TEST_J2EE-ear</artifactId>
+  <artifactId>test-j2ee-ear</artifactId>
   <packaging>ear</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>TEST_J2EE (EAR)</name>
+  <name>test-j2ee-ear</name>
 
 
 
@@ -15,14 +15,14 @@
 
   <parent>
     <groupId>test</groupId>
-    <artifactId>TEST_J2EE</artifactId>
+    <artifactId>test-j2ee</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <dependencies>
     <dependency>
       <groupId>test</groupId>
-      <artifactId>TEST_J2EE-war</artifactId>
+      <artifactId>test-j2ee-war</artifactId>
       <version>0.0.1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
@@ -41,11 +41,11 @@
 					Para filtrar src/main/application
 					<filtering>true</filtering>
 					-->
-          <displayName>TEST_J2EE</displayName>
+          <displayName>test-j2ee</displayName>
           <modules>
             <webModule>
               <groupId>test</groupId>
-              <artifactId>TEST_J2EE-war</artifactId>
+              <artifactId>test-j2ee-war</artifactId>
               <contextRoot>/testj2ee</contextRoot>
             </webModule>
           </modules>
