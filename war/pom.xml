@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>test</groupId>
-  <artifactId>TEST_J2EE-war</artifactId>
+  <artifactId>test-j2ee-war</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>TEST_J2EE (WAR)</name>
+  <name>test-j2ee-war</name>
 
   <properties>
     <pda.basedir>..</pda.basedir>
@@ -13,7 +13,7 @@
 
   <parent>
     <groupId>test</groupId>
-    <artifactId>TEST_J2EE</artifactId>
+    <artifactId>test-j2ee</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
