@@ -8,7 +8,13 @@
   <description>TEST_J2EE</description>
   <name>TEST_J2EE</name>
 
-
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/aitorruiz605/TEST</url>
+    </repository>
+  </distributionManagement>
 
   <!-- Modulos a incluir en el EAR -->
   <modules>
